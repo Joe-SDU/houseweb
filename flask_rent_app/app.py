@@ -166,5 +166,8 @@ def uploaded_file(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    # 只在开发环境运行
+    if os.getenv('RENDER'):  # 检测是否在Render环境
+        app.run(host='0.0.0.0', port=10000, debug=False)
+    else:
+        app.run(debug=True)
