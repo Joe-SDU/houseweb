@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租房信息计算网站</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>租房信息计算网站</h1>
+        <div class="buttons">
+            <a href="{{ url_for('add_house') }}" class="btn">录入房屋信息</a>
+            <a href="{{ url_for('view_houses') }}" class="btn">已看房屋信息</a>
+            <a href="{{ url_for('calculator') }}" class="btn">计算器</a>
+        </div>
+    </div>
+</body>
+</html>

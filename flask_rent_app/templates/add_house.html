@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录入房屋信息</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>录入房屋信息</h1>
+        <form id="house-form" enctype="multipart/form-data">
+            <input type="text" name="address" placeholder="房屋地址（必填）" required>
+            <input type="number" name="distance" placeholder="距离地铁站距离" step="any">
+            <input type="number" name="rent" placeholder="房租（必填）" required step="any">
+            <input type="number" name="agency_fee" placeholder="中介费" step="any">
+            <input type="number" name="water_fee" placeholder="水费（必填）" required step="any">
+            <input type="number" name="electricity_fee" placeholder="电费（必填）" required step="any">
+            <input type="number" name="depreciation" placeholder="折旧费" step="any">
+            <input type="text" name="payment_method" placeholder="压x付x">
+            <textarea name="note" placeholder="房屋备注"></textarea>
+            <input type="file" name="images" multiple>
+            <button type="submit">保存</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

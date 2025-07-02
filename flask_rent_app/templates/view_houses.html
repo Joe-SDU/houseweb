@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>已看房屋信息</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>已看房屋信息</h1>
+        <p>已保存房屋总数: {{ total }}</p>
+        <div class="houses-grid">
+            {% for house in houses %}
+            <a href="{{ url_for('view_house', house_id=house.id) }}" class="house-link">
+                <div class="house-card">
+                    <div class="house-images">
+                        {% for image in house.images %}
+                        <img src="{{ url_for('uploaded_file', filename=image) }}" alt="房屋图片">
+                        {% endfor %}
+                    </div>
+                    <div class="house-info">
+                        <h3>{{ house.address }}</h3>
+                        <p>大概预算: {{ house.budget }} 元</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

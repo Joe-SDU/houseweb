@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空调耗电量计算器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>空调耗电量计算器</h1>
+        <form id="calc-form">
+            <input type="text" name="ac_type" placeholder="变频or定频填一个">
+            <input type="number" name="input_power" placeholder="若定频此项必填" step="any">
+            <input type="number" name="cooling_season_power" placeholder="变频必填" step="any">
+            <input type="number" name="electricity_price" placeholder="每小时电费（必填）" required step="any">
+            <button type="submit">提交</button>
+        </form>
+        <div id="calc-result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

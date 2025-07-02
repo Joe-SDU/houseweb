@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ house.address }} 详情</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ house.address }} 详情</h1>
+        <div class="house-images">
+            {% for image in house.images %}
+            <img src="{{ url_for('uploaded_file', filename=image) }}" alt="房屋图片">
+            {% endfor %}
+        </div>
+        <div class="house-details">
+            <p>距离地铁站距离: {{ house.distance }} 米</p>
+            <p>房租: {{ house.rent }} 元</p>
+            <p>中介费: {{ house.agency_fee }} 元</p>
+            <p>水费: {{ house.water_fee }} 元</p>
+            <p>电费: {{ house.electricity_fee }} 元</p>
+            <p>折旧费: {{ house.depreciation }} 元</p>
+            <p>支付方式: {{ house.payment_method }}</p>
+            <p>房屋备注: {{ house.note }}</p>
+            <p>大概预算: {{ house.budget }} 元</p>
+        </div>
+        <a href="{{ url_for('view_houses') }}" class="btn">返回已看房屋列表</a>
+    </div>
+</body>
+</html>
